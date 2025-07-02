@@ -1,5 +1,15 @@
 # update-job-example
 
+This project contains a small example project, where I try to update the number of retries via Update Job API (https://docs.camunda.io/docs/apis-tools/camunda-api-rest/specifications/update-a-job/)
+However: This doesn't seem to work. The number of retries remains the same.
+
+Additional process instances can be started and are visible in Opreate. Jobs can also be activated and completed.
+
+Retries can be updated via Java, e.g. jobClient.newFailCommand(activatedJob).retries(activatedJob.getRetries() +1).send().join();, but it doesn't seem to work with the REST API.
+
+Steps to reproduce below
+
+
 1. Start C8Run
 ```log
 ./start.sh
